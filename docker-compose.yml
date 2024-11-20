@@ -1,0 +1,13 @@
+services:
+  whisperx-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/whisperx
+    working_dir: /whisperx
+    ports:
+      - "8000:8000"
+    environment:
+      - WHISPER_MODEL=base
+      - LANG=en
